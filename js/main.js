@@ -6,17 +6,13 @@
         console.info("I was clicked")
     })
 
-    document.querySelector(".red").addEventListener('click', function(ev){
-        document.querySelector('body').setAttribute('class', "redBack");
-    })
-       
-    document.querySelector(".green").addEventListener('click', function(ev){
-            document.querySelector('body').setAttribute('class', "greenBack");
-    })
-    document.querySelector(".blue").addEventListener('click', function(ev){
-        document.querySelector('body').setAttribute('class', "blueBack");
-    })
-    document.querySelector(".default").addEventListener('click', function(ev){
-        document.querySelector('body').removeAttribute('class');
-    })
+    let bodyElement = document.querySelector("body")
+    let colourBtns = document.querySelectorAll(".colPicker")
+    for(let i=0; i<colourBtns.length; i++){
+        colourBtns[i].addEventListener("click", chgColour)
+    }
+    function chgColour(ev){
+        let newColour = ev.target.classList[0] + "Back"
+        if(newColour)
+    }
 })()
